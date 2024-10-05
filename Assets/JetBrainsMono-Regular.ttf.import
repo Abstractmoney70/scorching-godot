@@ -3,18 +3,19 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ct0axmtewft7m"
-path="res://.godot/imported/JetBrainsMono-Regular.ttf-55b5cf71aab0b5321121bad98add267b.fontdata"
+path="res://.godot/imported/JetBrainsMono-Regular.ttf-bec93917bdbd2338437834d532aecbb9.fontdata"
 
 [deps]
 
-source_file="res://JetBrainsMono-Regular.ttf"
-dest_files=["res://.godot/imported/JetBrainsMono-Regular.ttf-55b5cf71aab0b5321121bad98add267b.fontdata"]
+source_file="res://Assets/JetBrainsMono-Regular.ttf"
+dest_files=["res://.godot/imported/JetBrainsMono-Regular.ttf-bec93917bdbd2338437834d532aecbb9.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

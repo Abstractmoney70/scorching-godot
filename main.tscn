@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bheyxcojsrvck"]
 
-[ext_resource type="Script" path="res://app.gd" id="1_q5ssk"]
-[ext_resource type="Theme" uid="uid://btvfwq6epe683" path="res://main_software_theme.tres" id="2_diw8h"]
-[ext_resource type="Script" path="res://specialisedcodeedit.gd" id="3_oovjn"]
-[ext_resource type="Texture2D" uid="uid://c6efwypvr0qp8" path="res://CodeModeLogoReimagined.png" id="4_d1e2g"]
+[ext_resource type="Script" path="res://Scripts/app.gd" id="1_q5ssk"]
+[ext_resource type="Theme" uid="uid://btvfwq6epe683" path="res://Assets/main_software_theme.tres" id="2_diw8h"]
+[ext_resource type="Script" path="res://Scripts/specialisedcodeedit.gd" id="3_oovjn"]
+[ext_resource type="Texture2D" uid="uid://c6efwypvr0qp8" path="res://Assets/CodeModeLogoReimagined.png" id="4_d1e2g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkk1i"]
 bg_color = Color(0.133333, 0.141176, 0.152941, 1)
