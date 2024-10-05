@@ -4,12 +4,10 @@ extends CodeEdit
 func _ready():	
 	var highlighter := CodeHighlighter.new()
 	# hi
-	
 	highlighter.add_color_region("#", "", Color.DIM_GRAY)
 	highlighter.add_color_region("'", "'", Color.DIM_GRAY)
 	highlighter.add_keyword_color("var", Color(1, 0.439, 0.518))
-	highlighter.add_keyword_color("(", Color(0.635, 0.745, 0.945))
-	highlighter.add_keyword_color(")", Color(0.635, 0.745, 0.945))
+	highlighter.add_color_region("(", ")", Color(0.635, 0.745, 0.945))
 	highlighter.add_keyword_color("extends", Color(1, 0.439, 0.518))
 	highlighter.add_keyword_color("func", Color(1, 0.439, 0.518))
 	highlighter.add_keyword_color("pass", Color(0.796, 0.455, 0.647))
