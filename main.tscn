@@ -167,7 +167,7 @@ offset_bottom = 236.285
 text = "The most reliable external godot editor!
 2024-Current
 All rights reserved
-Scorching Godot™  V1.0.1.5"
+Scorching Godot™  V1.0.1.6"
 
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_open_file_dialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_save_file_dialog_file_selected"]
