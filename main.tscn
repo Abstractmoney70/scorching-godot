@@ -1,18 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bheyxcojsrvck"]
+[gd_scene load_steps=6 format=3 uid="uid://bheyxcojsrvck"]
 
 [ext_resource type="Script" path="res://Scripts/app.gd" id="1_q5ssk"]
 [ext_resource type="Theme" uid="uid://btvfwq6epe683" path="res://Assets/main_software_theme.tres" id="2_diw8h"]
+[ext_resource type="StyleBox" uid="uid://d0t6un6e0bqoh" path="res://CodeEditThemes/spacegray.tres" id="3_0e1ot"]
 [ext_resource type="Script" path="res://Scripts/specialisedcodeedit.gd" id="3_oovjn"]
 [ext_resource type="Texture2D" uid="uid://c6efwypvr0qp8" path="res://Assets/CodeModeLogoReimagined.png" id="4_d1e2g"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkk1i"]
-bg_color = Color(0.133333, 0.141176, 0.152941, 1)
-
-[sub_resource type="CodeHighlighter" id="CodeHighlighter_aw1ea"]
-number_color = Color(0, 0, 1, 1)
-symbol_color = Color(0, 1, 0, 1)
-function_color = Color(1, 1, 0, 1)
-member_variable_color = Color(1, 0, 0, 1)
 
 [node name="var" type="Control"]
 layout_mode = 3
@@ -34,7 +26,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00196, 0.954665)
 theme = ExtResource("2_diw8h")
-theme_override_styles/normal = SubResource("StyleBoxFlat_gkk1i")
+theme_override_colors/current_line_color = Color(0.592157, 0.592157, 0.592157, 0.329412)
+theme_override_styles/normal = ExtResource("3_0e1ot")
 text = "# Welcome to Scorching Godot!
 
 extends Node
@@ -50,7 +43,6 @@ func _process(delta: float) -> void:
 	pass"
 scroll_smooth = true
 minimap_draw = true
-syntax_highlighter = SubResource("CodeHighlighter_aw1ea")
 highlight_all_occurrences = true
 highlight_current_line = true
 draw_control_chars = true
@@ -176,6 +168,135 @@ text = "The most reliable external godot editor!
 All rights reserved
 Scorching Godot™  V1.0.1.7"
 
+[node name="Editor" type="Button" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_right = 149.0
+offset_bottom = 31.0
+theme = ExtResource("2_diw8h")
+text = "Editor"
+
+[node name="EditorMenu" type="PopupMenu" parent="Editor"]
+position = Vector2i(150, 30)
+size = Vector2i(184, 142)
+item_count = 5
+item_0/text = "Editor Settings"
+item_1/text = "Command Palette"
+item_1/id = 1
+item_2/id = 2
+item_2/separator = true
+item_3/text = "Take Screenshot"
+item_3/id = 3
+item_4/text = "Toggle Fullscreen"
+item_4/id = 4
+
+[node name="EditorSettingsWindow" type="Window" parent="Editor/EditorMenu"]
+title = "Editor Settings"
+position = Vector2i(125, 250)
+size = Vector2i(800, 300)
+visible = false
+
+[node name="ThemesButton" type="Button" parent="Editor/EditorMenu/EditorSettingsWindow"]
+offset_right = 66.0
+offset_bottom = 30.0
+text = "Themes"
+
+[node name="Window" type="Window" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton"]
+title = "Themes"
+position = Vector2i(230, 185)
+size = Vector2i(730, 260)
+visible = false
+
+[node name="SpaceGray" type="ColorRect" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window"]
+offset_left = 40.0
+offset_top = 10.0
+offset_right = 80.0
+offset_bottom = 50.0
+color = Color(0.12549, 0.133333, 0.137255, 1)
+
+[node name="SpacegrayButton" type="Button" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/SpaceGray"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 40.0
+offset_right = 70.0
+offset_bottom = 70.0
+text = "Void"
+
+[node name="AngerRed" type="ColorRect" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window"]
+offset_left = 140.0
+offset_top = 10.0
+offset_right = 180.0
+offset_bottom = 50.0
+color = Color(0.203922, 0, 0.0196078, 1)
+
+[node name="AngerredButton" type="Button" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/AngerRed"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 40.0
+offset_right = 70.0
+offset_bottom = 70.0
+text = "Blood"
+
+[node name="OceanBlue" type="ColorRect" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window"]
+offset_left = 240.0
+offset_top = 10.0
+offset_right = 280.0
+offset_bottom = 50.0
+color = Color(0.0117647, 0.0196078, 0.109804, 1)
+
+[node name="OceanblueButton" type="Button" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/OceanBlue"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 40.0
+offset_right = 70.0
+offset_bottom = 70.0
+text = "Ocean"
+
+[node name="TropicalGreen" type="ColorRect" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window"]
+offset_left = 340.0
+offset_top = 10.0
+offset_right = 380.0
+offset_bottom = 50.0
+color = Color(0.0784314, 0.25098, 0.164706, 1)
+
+[node name="TropicGreenButton" type="Button" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/TropicalGreen"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 40.0
+offset_right = 70.0
+offset_bottom = 70.0
+text = "Tropical"
+
+[node name="BronzeYellow" type="ColorRect" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window"]
+offset_left = 440.0
+offset_top = 10.0
+offset_right = 480.0
+offset_bottom = 50.0
+color = Color(0.207843, 0.137255, 0.0627451, 1)
+
+[node name="BronzeYellowButton" type="Button" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/BronzeYellow"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 40.0
+offset_right = 70.0
+offset_bottom = 70.0
+text = "Bronze"
+
+[node name="SpookyPurple" type="ColorRect" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window"]
+offset_left = 540.0
+offset_top = 10.0
+offset_right = 580.0
+offset_bottom = 50.0
+color = Color(0.180392, 0.141176, 0.254902, 1)
+
+[node name="SpookypurpleButton" type="Button" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/SpookyPurple"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 40.0
+offset_right = 70.0
+offset_bottom = 70.0
+text = "Spooky"
+
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_open_file_dialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_save_file_dialog_file_selected"]
 [connection signal="button_down" from="File" to="." method="_on_file_button_down"]
@@ -183,3 +304,7 @@ Scorching Godot™  V1.0.1.7"
 [connection signal="button_down" from="Help" to="." method="_on_help_button_down"]
 [connection signal="id_pressed" from="Help/HelpMenu" to="." method="_on_help_menu_id_pressed"]
 [connection signal="close_requested" from="Help/About" to="." method="_on_about_close_requested"]
+[connection signal="button_down" from="Editor" to="." method="_on_editor_button_down"]
+[connection signal="id_pressed" from="Editor/EditorMenu" to="." method="_on_editor_menu_id_pressed"]
+[connection signal="close_requested" from="Editor/EditorMenu/EditorSettingsWindow" to="." method="_on_editor_settings_window_close_requested"]
+[connection signal="button_down" from="Editor/EditorMenu/EditorSettingsWindow/ThemesButton" to="." method="_on_themes_button_button_down"]

@@ -14,7 +14,7 @@ func _on_item_pressed(idspecial):
 	elif item_id == 1:
 		$SaveFileDialog.popup()
 	elif item_id == 2:
-		queue_free()
+		get_tree().queue_delete($".")
 	
 
 
@@ -70,3 +70,30 @@ func _on_help_button_down() -> void:
 
 func _on_about_close_requested() -> void:
 	$Help/About.visible = false
+
+func _editor_menu(id):
+	var item_id = id
+	
+	if item_id == 0:
+		$Editor/EditorMenu/EditorSettingsWindow.popup()
+	if item_id == 1:
+		print("huh, neat")
+	if item_id == 3:
+		print("huh, neat")
+	if item_id == 4:
+		print("huh, neat")
+
+func _on_editor_button_down() -> void:
+	$Editor/EditorMenu.visible = true
+
+
+func _on_editor_menu_id_pressed(id: int) -> void:
+	_editor_menu(id)
+
+
+func _on_themes_button_button_down() -> void:
+	print("poof!")
+
+# "res://CodeEditThemes/spacegray.tres" "theme_override_styles/normal"
+func _on_editor_settings_window_close_requested() -> void:
+	$Editor/EditorMenu/EditorSettingsWindow.visible = false

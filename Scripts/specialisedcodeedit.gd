@@ -1,7 +1,6 @@
 extends CodeEdit
 
 func _ready() -> void:
-	$ABCD
 	var highlighter := CodeHighlighter.new()
 	# hi -> hello
 	highlighter.set_symbol_color(Color(0.635, 0.745, 0.945))
