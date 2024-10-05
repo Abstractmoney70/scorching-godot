@@ -1,26 +1,17 @@
 extends CodeEdit
 
 func _ready() -> void:
+	$ABCD
 	var highlighter := CodeHighlighter.new()
 	# hi -> hello
+	highlighter.set_symbol_color(Color(0.635, 0.745, 0.945))
+	highlighter.set_member_variable_color(Color(0.635, 0.745, 0.945))
 	highlighter.add_color_region("#", "", Color.DIM_GRAY)
-	highlighter.add_color_region("'", "'", Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('"', '"', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('=', '>', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('-', '>', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('<', '=', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('<', '-', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('=', '=', Color(0.635, 0.745, 0.945))
+	highlighter.add_color_region("'", "'", Color(0.856, 0.726, 0.42), false)
+	highlighter.add_color_region('"', '"', Color(0.856, 0.726, 0.42), false)
 	highlighter.add_keyword_color("var", Color(1, 0.439, 0.518))
-	highlighter.add_color_region("(", ")", Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region(':', '', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('+', '', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('-', '', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('*', '', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('/', '', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('^', '', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('>', '', Color(0.635, 0.745, 0.945))
-	highlighter.add_color_region('<', '', Color(0.635, 0.745, 0.945))
+	highlighter.add_keyword_color("(", Color(1, 0.439, 0.518))
+	highlighter.add_keyword_color("queue_free", Color(0.298, 0.553, 0.769))
 	highlighter.add_keyword_color("extends", Color(1, 0.439, 0.518))
 	highlighter.add_keyword_color("true", Color(1, 0.439, 0.518))
 	highlighter.add_keyword_color("false", Color(1, 0.439, 0.518))

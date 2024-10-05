@@ -14,7 +14,7 @@ func _on_item_pressed(idspecial):
 	elif item_id == 1:
 		$SaveFileDialog.popup()
 	elif item_id == 2:
-		get_tree().queue_free()
+		queue_free()
 	
 
 

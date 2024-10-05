@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bheyxcojsrvck"]
+[gd_scene load_steps=7 format=3 uid="uid://bheyxcojsrvck"]
 
 [ext_resource type="Script" path="res://Scripts/app.gd" id="1_q5ssk"]
 [ext_resource type="Theme" uid="uid://btvfwq6epe683" path="res://Assets/main_software_theme.tres" id="2_diw8h"]
@@ -7,6 +7,12 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkk1i"]
 bg_color = Color(0.133333, 0.141176, 0.152941, 1)
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_aw1ea"]
+number_color = Color(0, 0, 1, 1)
+symbol_color = Color(0, 1, 0, 1)
+function_color = Color(1, 1, 0, 1)
+member_variable_color = Color(1, 0, 0, 1)
 
 [node name="var" type="Control"]
 layout_mode = 3
@@ -44,6 +50,7 @@ func _process(delta: float) -> void:
 	pass"
 scroll_smooth = true
 minimap_draw = true
+syntax_highlighter = SubResource("CodeHighlighter_aw1ea")
 highlight_all_occurrences = true
 highlight_current_line = true
 draw_control_chars = true
@@ -167,7 +174,7 @@ offset_bottom = 236.285
 text = "The most reliable external godot editor!
 2024-Current
 All rights reserved
-Scorching Godot™  V1.0.1.6"
+Scorching Godot™  V1.0.1.7"
 
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_open_file_dialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_save_file_dialog_file_selected"]
