@@ -12,5 +12,7 @@ func _ready():
 	highlighter.add_keyword_color("if", Color(0.796, 0.455, 0.647))
 	highlighter.add_keyword_color("elif", Color(0.796, 0.455, 0.647))
 	highlighter.add_keyword_color("else", Color(0.796, 0.455, 0.647))
+	highlighter.set_function_color(Color(0.365, 0.804, 0.894))
+
 
 	syntax_highlighter = highlighter
