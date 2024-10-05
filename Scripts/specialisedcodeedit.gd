@@ -5,17 +5,11 @@ func _ready():
 	var highlighter := CodeHighlighter.new()
 	# hi
 	
-	randf()
-	randomize()
-	seed(5)
-	print("oh hello world!")
-	randi_range(1, 10)
-	
-	
-	
-	
-	highlighter.add_color_region("#", "", Color.DIM_GRAY, true)
+	highlighter.add_color_region("#", "", Color.DIM_GRAY)
+	highlighter.add_color_region("'", "'", Color.DIM_GRAY)
 	highlighter.add_keyword_color("var", Color(1, 0.439, 0.518))
+	highlighter.add_keyword_color("(", Color(0.635, 0.745, 0.945))
+	highlighter.add_keyword_color(")", Color(0.635, 0.745, 0.945))
 	highlighter.add_keyword_color("extends", Color(1, 0.439, 0.518))
 	highlighter.add_keyword_color("func", Color(1, 0.439, 0.518))
 	highlighter.add_keyword_color("pass", Color(0.796, 0.455, 0.647))
