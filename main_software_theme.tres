@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://btvfwq6epe683"]
+
+[ext_resource type="FontFile" uid="uid://ct0axmtewft7m" path="res://JetBrainsMono-Regular.ttf" id="1_c5vy8"]
+
+[resource]
+default_font = ExtResource("1_c5vy8")

@@ -1,0 +1,178 @@
+[gd_scene load_steps=6 format=3 uid="uid://bheyxcojsrvck"]
+
+[ext_resource type="Script" path="res://app.gd" id="1_q5ssk"]
+[ext_resource type="Theme" uid="uid://btvfwq6epe683" path="res://main_software_theme.tres" id="2_diw8h"]
+[ext_resource type="Script" path="res://specialisedcodeedit.gd" id="3_oovjn"]
+[ext_resource type="Texture2D" uid="uid://c6efwypvr0qp8" path="res://CodeModeLogoReimagined.png" id="4_d1e2g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkk1i"]
+bg_color = Color(0.133333, 0.141176, 0.152941, 1)
+
+[node name="var" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q5ssk")
+
+[node name="CodeEdit" type="CodeEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00196, 0.954665)
+theme = ExtResource("2_diw8h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gkk1i")
+text = "# Welcome to Scorching Godot!
+
+extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass"
+scroll_smooth = true
+minimap_draw = true
+highlight_all_occurrences = true
+highlight_current_line = true
+draw_control_chars = true
+draw_tabs = true
+symbol_lookup_on_click = true
+line_folding = true
+line_length_guidelines = Array[int]([75, 60])
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+gutters_draw_fold_gutter = true
+code_completion_enabled = true
+indent_automatic = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+script = ExtResource("3_oovjn")
+
+[node name="OpenFileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+position = Vector2i(301, 128)
+size = Vector2i(600, 350)
+theme = ExtResource("2_diw8h")
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+
+[node name="SaveFileDialog" type="FileDialog" parent="."]
+position = Vector2i(301, 128)
+size = Vector2i(600, 350)
+theme = ExtResource("2_diw8h")
+ok_button_text = "Save"
+access = 2
+
+[node name="File" type="Button" parent="."]
+layout_mode = 1
+offset_right = 47.0
+offset_bottom = 30.0
+theme = ExtResource("2_diw8h")
+action_mode = 0
+text = "File"
+
+[node name="FileMenu" type="PopupMenu" parent="File"]
+position = Vector2i(5, 30)
+size = Vector2i(107, 100)
+theme = ExtResource("2_diw8h")
+item_count = 3
+item_0/text = "Open File"
+item_1/text = "Save File"
+item_1/id = 1
+item_2/text = "Quit"
+item_2/id = 2
+
+[node name="Help" type="Button" parent="."]
+layout_mode = 1
+offset_left = 47.0
+offset_right = 94.0
+offset_bottom = 31.0
+theme = ExtResource("2_diw8h")
+action_mode = 0
+text = "Help"
+
+[node name="HelpMenu" type="PopupMenu" parent="Help"]
+position = Vector2i(45, 30)
+size = Vector2i(260, 176)
+item_count = 9
+item_0/text = "Search Help"
+item_1/id = 1
+item_1/separator = true
+item_2/text = "Online Documentation"
+item_2/id = 2
+item_3/text = "Discord"
+item_3/id = 3
+item_4/id = 4
+item_4/separator = true
+item_5/text = "Report a bug"
+item_5/id = 5
+item_6/text = "Suggest a feature"
+item_6/id = 6
+item_7/id = 7
+item_7/separator = true
+item_8/text = "About Scorching Godot..."
+item_8/id = 8
+
+[node name="About" type="Window" parent="Help"]
+title = "Thanks from Absolut. Co!"
+initial_position = 1
+size = Vector2i(700, 300)
+visible = false
+
+[node name="CodeModeLogoReimagined" type="Sprite2D" parent="Help/About"]
+position = Vector2(182, 374)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_d1e2g")
+offset = Vector2(0, -500)
+
+[node name="Label" type="Label" parent="Help/About"]
+custom_minimum_size = Vector2(50, 0)
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 269.0
+offset_bottom = 97.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_diw8h")
+text = "‎ 
+
+
+
+‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ Scorching Godot
+
+
+                                                      "
+uppercase = true
+
+[node name="Label2" type="Label" parent="Help/About"]
+offset_left = 250.0
+offset_top = 139.285
+offset_right = 634.0
+offset_bottom = 236.285
+text = "The most reliable external godot editor!
+2024-Current
+All rights reserved
+Scorching Godot™"
+
+[connection signal="file_selected" from="OpenFileDialog" to="." method="_on_open_file_dialog_file_selected"]
+[connection signal="file_selected" from="SaveFileDialog" to="." method="_on_save_file_dialog_file_selected"]
+[connection signal="button_down" from="File" to="." method="_on_file_button_down"]
+[connection signal="id_pressed" from="File/FileMenu" to="." method="_on_file_menu_id_pressed"]
+[connection signal="button_down" from="Help" to="." method="_on_help_button_down"]
+[connection signal="id_pressed" from="Help/HelpMenu" to="." method="_on_help_menu_id_pressed"]
+[connection signal="close_requested" from="Help/About" to="." method="_on_about_close_requested"]

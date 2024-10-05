@@ -1,0 +1,17 @@
+# Welcome to CodeMode
+
+extends Node
+
+@export var test_bool = false
+@export var test_int = -1
+@export var test_float = 0.3
+@export var test_string = "Are we playing instruments now?"
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
