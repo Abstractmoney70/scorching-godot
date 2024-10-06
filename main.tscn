@@ -166,7 +166,7 @@ offset_bottom = 236.285
 text = "The most reliable external godot editor!
 2024-Current
 All rights reserved
-Scorching Godot™  V1.0.1.7"
+Scorching Godot™  V1.0.1.8"
 
 [node name="Editor" type="Button" parent="."]
 layout_mode = 0
@@ -203,7 +203,7 @@ text = "Themes"
 
 [node name="Window" type="Window" parent="Editor/EditorMenu/EditorSettingsWindow/ThemesButton"]
 title = "Themes"
-position = Vector2i(230, 185)
+initial_position = 2
 size = Vector2i(730, 260)
 visible = false
 
@@ -308,3 +308,10 @@ text = "Spooky"
 [connection signal="id_pressed" from="Editor/EditorMenu" to="." method="_on_editor_menu_id_pressed"]
 [connection signal="close_requested" from="Editor/EditorMenu/EditorSettingsWindow" to="." method="_on_editor_settings_window_close_requested"]
 [connection signal="button_down" from="Editor/EditorMenu/EditorSettingsWindow/ThemesButton" to="." method="_on_themes_button_button_down"]
+[connection signal="close_requested" from="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window" to="." method="_on_window_close_requested"]
+[connection signal="button_down" from="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/SpaceGray/SpacegrayButton" to="CodeEdit" method="_on_spacegray_button_button_down"]
+[connection signal="button_down" from="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/AngerRed/AngerredButton" to="CodeEdit" method="_on_angerred_button_button_down"]
+[connection signal="button_down" from="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/OceanBlue/OceanblueButton" to="CodeEdit" method="_on_oceanblue_button_button_down"]
+[connection signal="button_down" from="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/TropicalGreen/TropicGreenButton" to="CodeEdit" method="_on_tropic_green_button_button_down"]
+[connection signal="button_down" from="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/BronzeYellow/BronzeYellowButton" to="CodeEdit" method="_on_bronze_yellow_button_button_down"]
+[connection signal="button_down" from="Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window/SpookyPurple/SpookypurpleButton" to="CodeEdit" method="_on_spookypurple_button_button_down"]

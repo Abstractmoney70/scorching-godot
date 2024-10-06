@@ -93,7 +93,11 @@ func _on_editor_menu_id_pressed(id: int) -> void:
 
 func _on_themes_button_button_down() -> void:
 	print("poof!")
-
-# "res://CodeEditThemes/spacegray.tres" "theme_override_styles/normal"
+	$Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window.visible = true
 func _on_editor_settings_window_close_requested() -> void:
 	$Editor/EditorMenu/EditorSettingsWindow.visible = false
+
+
+func _on_window_close_requested() -> void:
+	$Editor/EditorMenu/EditorSettingsWindow/ThemesButton/Window.visible = false
+	#Themes Window
